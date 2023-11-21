@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
-  
+
   def create
     @group = current_user.groups.new(group_params)
     if @group.save
@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   def edit
     @group = Group.find(params[:id])
   end
@@ -34,14 +34,15 @@ class GroupsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
     redirect_to groups_path, status: :see_other
   end
-  
+
   private
+
   def group_params
     params.require(:group).permit(:name, :icon)
   end

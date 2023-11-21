@@ -11,7 +11,7 @@
       <p><%= group.created_at.strftime("%B %e, %Y") %></p>      
     </div>
     <div>
-
+      <strong>$<%= group.investments.sum(:amount) %>0</strong>
     </div>
   </a>
 <% end %>
