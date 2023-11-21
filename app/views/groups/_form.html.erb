@@ -1,0 +1,14 @@
+<%= form_with model: @group do |form|%>
+<%= notice %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<div>
+  <%= form.label :icon %>
+  <%= form.text_field :icon%>
+</div>
+<div>
+  <%= form.submit 'Save' %>
+</div>
+<% end %>

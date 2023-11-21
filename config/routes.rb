@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'groups/index'
   devise_for :users
   
   # Default route for authenticate or unauthenticate user
