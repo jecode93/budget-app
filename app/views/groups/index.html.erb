@@ -1,7 +1,8 @@
+<%= button_to 'Sign out', destroy_user_session_path, method: :delete, data: {"turbo-method": :delete} %>
 <h1>Category</h1>
 
 <% @groups.each do |group|%>
-  <a href="/groups/<%= group.id %>">
+  <a href="/groups/<%= group.id %>/investments">
     <div>
       <img src="<%= group.icon %>" width="100"/>
     </div>
@@ -10,7 +11,7 @@
       <p><%= group.created_at.strftime("%B %e, %Y") %></p>      
     </div>
     <div>
-      <p>$ </p>
+
     </div>
   </a>
 <% end %>

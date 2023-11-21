@@ -1,0 +1,25 @@
+<%= form_with model: @investment, url: group_investments_path do |form| %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+	<% @investment.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+  <%= form.label :amount %>
+  <%= form.text_field :amount %>
+  <% @investment.errors.full_messages_for(:amount).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+  <%= form.collection_select(:group_ids, current_user.groups, :id, :name, {}, { multiple: true, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" }) %>
+  <% @investment.errors.full_messages_for(:group_ids).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+  <%= form.submit 'Save' %>
+</div>
+<% end %>

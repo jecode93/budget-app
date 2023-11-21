@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = current_user.groups
+    @investment = current_user.investments
+    @total_amount = @investment.sum(:amount)
   end
 
   def show
@@ -39,6 +41,7 @@ class GroupsController < ApplicationController
     redirect_to groups_path, status: :see_other
   end
   
+  private
   def group_params
     params.require(:group).permit(:name, :icon)
   end
