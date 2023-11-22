@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class InvestmentTest < ActiveSupport::TestCase
+class SplashScreensControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
