@@ -1,6 +1,9 @@
 <%= render 'layouts/header', text: 'Categories', text_second: "Sign out" %>
 
 <div class="mt-4 mx-4 relative">
+    <% if @groups.empty? %>
+    <p class="text-gray text-center italic pt-20">No category yet </p>
+    <% else %> 
   <% @groups.each do |group|%>
   <a href="/groups/<%= group.id %>/investments">
     <div class="flex mb-4 bg-white p-3 gap-2 justify-between items-center">
@@ -21,6 +24,7 @@
     </div>
   </a>
 
+  <% end %>
   <% end %>
   <%= link_to new_group_path do %>
     <span
