@@ -12,10 +12,10 @@
         <% end %>  
     <% end %>
   </div>
-  <p class="uppercase absolute text-center left-10 right-10"><%= text %></p>
-  <p>
+  <p class="uppercase absolute text-center left-20 right-20"><%= text %></p>
+  <p class="">
     <% if text_second == "Sign out" %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'absolute right-5 top-0 bottom-0' %>
     <% else %>
       <%= text_second %>
     <% end %>
