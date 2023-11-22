@@ -13,7 +13,7 @@
     <!-- Add icon for transaction page to link to the transaction group if the text == new transaction -->  
     <% if text == "New transaction" %>
     <%= link_to group_investments_path do %> 
-            <%= inline_svg_tag "chevron_left.svg" %> 
+            <%= inline_svg_tag "chevron_left.svg", class: 'chevron_left', id: 'chevronLeft' %> 
           <% end %> 
       <% else %>
       
