@@ -3,10 +3,28 @@
 >
   <div class="w-5">
     <% if user_signed_in? %>
-      <%= link_to groups_path do %> 
-        <%= inline_svg_tag "chevron_left.svg" %> 
+    <!-- Remove icon in category page -->
+    <% if text == "Categories" %>
+      <%= inline_svg_tag "" %> 
+    <%end %>
+    
+    <!-- Add icon for others -->
+    
+    <!-- Add icon for transaction page to link to the transaction group if the text == new transaction -->  
+    <% if text == "New transaction" %>
+    <%= link_to group_investments_path do %> 
+            <%= inline_svg_tag "chevron_left.svg" %> 
+          <% end %> 
+      <% else %>
+      
+    <!-- Add icon for all transactions page to link to all groups -->  
+          <%= link_to groups_path do %> 
+            <%= inline_svg_tag "chevron_left.svg" %> 
+          <% end %>
       <% end %>
-    <% else %>
+      
+      <% else %>
+      <!-- Link to root path if user not sign in -->
         <%= link_to root_path do %> 
           <%= inline_svg_tag "chevron_left.svg" %> 
         <% end %>  
