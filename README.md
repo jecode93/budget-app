@@ -106,7 +106,7 @@ To get a local copy up and running follow these simple example steps.
 Install this project using:
 
 - cd project/directory
-- Git clone [Module 1 Capstone Project](https://github.com/jecode93/first-module-capstone-project.git)
+- Git clone [Budget App](https://github.com/jecode93/budget-app.git)
 
 ### Usage
 
@@ -119,28 +119,28 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-- Open the index.html file
-- Modify the name in the h1 tag or the description
-- Refresh you browser to see the changes
+- Rails server (In the command line)
+- Go to http://127.0.0.1:3000
+- Enjoy
 
 ### Deployment
 
 You can deploy this project using:
 
 - [Netlify](https://www.netlify.com/)
-- [GitHub Page](https://pages.github.com/)
+- [Render](https://pages.github.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Project documentation and short descriptive Video
 
-- Click on the link for [Short video](https://www.loom.com/share/023a8b7c06d44473acfe5079efe04975?sid=bbc06854-132d-4726-b26f-2a178992ad75)
+- Click on the link for [Short video](https://www.loom.com/share/23e170831d024d06bbc2bc87c23b9d03?sid=3549b05c-19c0-4c71-beec-0a8f4a257b5f)
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://jecode93.github.io/first-module-capstone-project/)
+- [Live Demo](https://bugdget-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
