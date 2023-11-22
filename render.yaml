@@ -1,0 +1,18 @@
+databases:
+  - name: dpg-clbktft4lnec738op9hg-a
+    databaseName: recipe_app_8sni
+    user: recipe_app_8sni_user
+
+services:
+  - type: web
+    name: Bugdget-app
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dpg-clbktft4lnec738op9hg-a
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
