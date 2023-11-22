@@ -1,0 +1,16 @@
+<div
+  class="flex relative text-white bg-main h-14 justify-between items-center px-3"
+>
+  <div class="w-5">
+    <%= link_to groups_path do %> <%= inline_svg_tag "chevron_left.svg" %> <%
+    end %>
+  </div>
+  <p class="uppercase absolute text-center left-10 right-10"><%= text %></p>
+  <p>
+    <% if text_second == "Sign out" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= text_second %>
+    <% end %>
+  </p>
+</div>
