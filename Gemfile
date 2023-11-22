@@ -30,6 +30,7 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'inline_svg'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -71,3 +72,5 @@ group :test do
 end
 
 gem 'devise', '~> 4.9'
+
+gem "tailwindcss-rails", "~> 2.0"

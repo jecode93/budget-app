@@ -1,26 +1,38 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div class="h-screen text-center relative">
+  <%= render 'layouts/header', text: 'Log in', text_second: "" %> 
+  
+  <div class="mt-4">
+  <%=
+  form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %>
+  <div class="border-1 border-gray mx-2">
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",
+      placeholder: 'Email', class: 'p-3 w-full border-0 border-b-2
+      placeholder:text-gray' %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password",
+      placeholder: 'Password', class: 'p-3 w-full border-0 border-b-2
+      placeholder:text-gray' %>
+    </div>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="absolute bottom-10 left-0 right-0">
+    <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+    </div>
+    <% end %>
+
+    <div class="actions mt-2">
+      <p
+        class="bg-main text-white cursor-pointer p-2 rounded w-auto uppercase mb-2 mx-4"
+      >
+        <%= f.submit "Log in", class: 'cursor-pointer' %>
+      </p>
+    </div>
+    <% end %> <%= render "devise/shared/links" %>
+  </div>
+</div>
+</div>
