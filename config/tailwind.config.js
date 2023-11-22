@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Proxima Nova", ...defaultTheme.fontFamily.sans],
+        sans: ["Pacifico", ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
