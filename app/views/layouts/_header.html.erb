@@ -2,8 +2,15 @@
   class="flex relative text-white bg-main h-14 justify-between items-center px-3"
 >
   <div class="w-5">
-    <%= link_to groups_path do %> <%= inline_svg_tag "chevron_left.svg" %> <%
-    end %>
+    <% if user_signed_in? %>
+      <%= link_to groups_path do %> 
+        <%= inline_svg_tag "chevron_left.svg" %> 
+      <% end %>
+    <% else %>
+        <%= link_to root_path do %> 
+          <%= inline_svg_tag "chevron_left.svg" %> 
+        <% end %>  
+    <% end %>
   </div>
   <p class="uppercase absolute text-center left-10 right-10"><%= text %></p>
   <p>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   
+  root 'splash#index'
   
   resources :groups do
     resources :investments

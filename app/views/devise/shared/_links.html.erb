@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), class: "bg-main text-white cursor-pointer p-2 rounded w-auto uppercase mb-2 mx-4" %><br />
+  <%= link_to "Log in", new_session_path(resource_name), class: " text-gray cursor-pointer p-2 rounded w-auto mb-2 mx-4" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "text-gray mx-auto p-2 rounded mb-4" %><br />
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "text-gray mx-auto p-2 rounded mb-4 cursor-pointer" %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
