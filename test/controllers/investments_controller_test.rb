@@ -1,28 +1,28 @@
 require 'test_helper'
 
-class GroupsControllerTest < ActionDispatch::IntegrationTest
+class InvestmentsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get groups_index_url
+    get investments_index_url
     assert_response :success
   end
 
   test 'should get show' do
-    get groups_show_url
+    get investments_show_url
     assert_response :success
   end
 
   test 'should get new' do
-    get groups_new_url
+    get investments_new_url
     assert_response :success
   end
 
   test 'should get edit' do
-    get groups_edit_url
+    get investments_edit_url
     assert_response :success
   end
 
   test 'should get destroy' do
-    get groups_destroy_url
+    get investments_destroy_url
     assert_response :success
   end
 end

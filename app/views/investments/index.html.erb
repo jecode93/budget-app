@@ -1,0 +1,12 @@
+<%= link_to '<', groups_path %>
+<h1>Transactions</h1>
+
+<strong>Total amount: $<%= @total_amount %>0</strong>
+<% @investments.each do |investment| %>
+  <p><%= investment.name %></p>
+  <p>$<%= investment.amount %>0</p>
+  <hr>
+<% end %>
+
+
+<%= link_to 'Add new transaction', new_group_investment_path %>

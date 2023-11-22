@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'groups/index'
+  get 'investments/index'
+  get 'investments/show'
+  get 'investments/new'
+  get 'investments/edit'
+  get 'investments/destroy'
   devise_for :users
   
   # Default route for authenticate or unauthenticate user

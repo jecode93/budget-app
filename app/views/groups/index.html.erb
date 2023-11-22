@@ -1,0 +1,18 @@
+<%= button_to 'Sign out', destroy_user_session_path, method: :delete, data: {"turbo-method": :delete} %>
+<h1>Category</h1>
+
+<% @groups.each do |group|%>
+  <a href="/groups/<%= group.id %>/investments">
+    <div>
+      <img src="<%= group.icon %>" width="100"/>
+    </div>
+    <div>
+      <p><%= group.name %></p>
+      <p><%= group.created_at.strftime("%B %e, %Y") %></p>      
+    </div>
+    <div>
+      <strong>$<%= group.investments.sum(:amount) %>0</strong>
+    </div>
+  </a>
+<% end %>
+<%= link_to 'Add new category', new_group_path  %>
