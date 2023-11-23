@@ -1,6 +1,9 @@
 name: Linters
 
-on: pull_request
+on:
+  push:
+    branches:
+      - budget-app-complete 
 
 env:
   FORCE_COLOR: 1
