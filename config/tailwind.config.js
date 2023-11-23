@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Proxima_nova", ...defaultTheme.fontFamily.sans],
-        pacifico: ['font']
       },
     },
     colors: {
