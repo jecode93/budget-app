@@ -1,0 +1,28 @@
+<%= form_with model: @group do |form|%>
+<%= notice %>
+
+<div class="mt-4 mx-4 relative">
+
+  
+<div>
+  <%= form.text_field :name,
+      placeholder: 'Name', class: 'p-3 w-full border-0 border-b-2
+      placeholder:text-gray' %>
+  <% @group.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+  <%= form.text_field :icon,
+      placeholder: 'Icon', class: 'p-3 w-full border-0 border-b-2
+      placeholder:text-gray'%>
+  <% @group.errors.full_messages_for(:icon).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+</div>
+
+<div>
+  <%= form.submit 'Save', class: 'h-20 text-center fixed bottom-0 left-0 right-0 bg-second hover:bg-second_hover text-white cursor-pointer uppercase py-7' %>
+</div>
+<% end %>

@@ -1,0 +1,41 @@
+<div
+  class="flex relative text-white bg-main h-14 justify-between items-center px-3"
+>
+  <div class="w-5">
+    <% if user_signed_in? %>
+    <!-- Remove icon in category page -->
+    <% if text == "Categories" %>
+      <%= inline_svg_tag "" %> 
+    <%end %>
+    
+    <!-- Add icon for others -->
+    
+    <!-- Add icon for transaction page to link to the transaction group if the text == new transaction -->  
+    <% if text == "New transaction" %>
+    <%= link_to group_investments_path do %> 
+            <%= inline_svg_tag "chevron_left.svg", class: 'chevron_left', id: 'chevronLeft' %> 
+          <% end %> 
+      <% else %>
+      
+    <!-- Add icon for all transactions page to link to all groups -->  
+          <%= link_to groups_path do %> 
+            <%= inline_svg_tag "chevron_left.svg" %> 
+          <% end %>
+      <% end %>
+      
+      <% else %>
+      <!-- Link to root path if user not sign in -->
+        <%= link_to root_path do %> 
+          <%= inline_svg_tag "chevron_left.svg" %> 
+        <% end %>  
+    <% end %>
+  </div>
+  <p class="uppercase absolute text-center left-20 right-20"><%= text %></p>
+  <p class="">
+    <% if text_second == "Sign out" %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'absolute right-5 top-0 bottom-0' %>
+    <% else %>
+      <%= text_second %>
+    <% end %>
+  </p>
+</div>

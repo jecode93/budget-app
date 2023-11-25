@@ -1,0 +1,24 @@
+<%= render 'layouts/header', text: 'Transactions', text_second: "Sign out" %>
+
+<div class="h-14 bg-white flex justify-center items-center mb-5">
+  <strong>Total amount: $<%= @total_amount %>0</strong>
+</div>
+
+<div class="mt-4 mx-2 relative">
+
+  <% if @investments.empty? %>
+    <p class="text-gray text-center italic pt-20">No transaction yet </p>
+    <% else %> 
+<div class="p-3 mb-4">
+<% @investments.each do |investment| %>
+  <div class="bg-white p-3 mb-4 flex justify-between">
+    <p><%= investment.name %></p>
+    <p class="font-bold">$<%= investment.amount %>0</p>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
+
+<%= link_to 'Add new transaction', new_group_investment_path, class: "h-20 text-center fixed bottom-0 left-0 right-0 bg-second hover:bg-second_hover text-white cursor-pointer uppercase py-7" %>
+</div>

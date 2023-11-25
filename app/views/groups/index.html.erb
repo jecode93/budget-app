@@ -1,0 +1,31 @@
+<%= render 'layouts/header', text: 'Categories', text_second: "Sign out" %>
+
+<div class="mt-4 mx-4 relative">
+    <% if @groups.empty? %>
+    <p class="text-gray text-center italic pt-20">No category yet </p>
+    <% else %> 
+  <% @groups.each do |group|%>
+  <a href="/groups/<%= group.id %>/investments">
+    <div id="groupCard" class="flex mb-4 bg-white p-3 gap-2 justify-between items-center">
+      <div class="flex gap-2">
+        <div>
+          <img src="<%= group.icon %>" width="100" />
+        </div>
+        <div>
+          <p class="mb-6 text-lg"><%= group.name %></p>
+          <p class="text-sm text-gray">
+            <%= group.created_at.strftime("%B %e, %Y") %>
+          </p>
+        </div>
+      </div>
+      <div>
+        <strong>$<%= group.investments.sum(:amount) %>0</strong>
+      </div>
+    </div>
+  </a>
+
+  <% end %>
+  <% end %>
+  <%= link_to 'Add new category', new_group_path, class:"h-20 text-center fixed bottom-0 left-0 right-0 bg-second hover:bg-second_hover text-white cursor-pointer uppercase py-7" %>
+      
+</div>

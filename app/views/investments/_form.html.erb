@@ -1,0 +1,33 @@
+
+<div class="mt-4 mx-4 relative">
+
+<%= form_with model: @investment, url: group_investments_path do |form| %>
+<div class="mb-2">
+  
+  <div>
+    <%= form.text_field :name, placeholder: 'Name *', class: 'p-3 w-full border-0 border-b-2
+    placeholder:text-gray' %>
+    <% @investment.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.text_field :amount, placeholder: 'Amount *', class: 'p-3 w-full border-0 border-b-2
+    placeholder:text-gray'  %>
+    <% @investment.errors.full_messages_for(:amount).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= form.label :group_ids, 'Select one group: *' %>
+  <%= form.collection_select(:group_ids, current_user.groups, :id, :name, {}, { multiple: true, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" }) %>
+  <% @investment.errors.full_messages_for(:group_ids).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+</div>
+<div>
+  <%= form.submit 'Save', class: 'h-20 text-center fixed bottom-0 left-0 right-0 bg-second hover:bg-second_hover text-white cursor-pointer uppercase py-7' %>
+</div>
+<% end %>
+</div>
